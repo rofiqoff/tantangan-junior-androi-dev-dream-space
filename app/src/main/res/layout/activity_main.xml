@@ -1,18 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
     xmlns:app = "http://schemas.android.com/apk/res-auto"
     xmlns:tools = "http://schemas.android.com/tools"
     android:layout_width = "match_parent"
     android:layout_height = "match_parent"
-    tools:context = ".activity.MainActivity">
+    android:background = "@android:color/white"
+    android:orientation = "vertical">
 
-    <TextView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:text = "Hello World!"
-        app:layout_constraintBottom_toBottomOf = "parent"
-        app:layout_constraintLeft_toLeftOf = "parent"
-        app:layout_constraintRight_toRightOf = "parent"
-        app:layout_constraintTop_toTopOf = "parent" />
+    <include layout = "@layout/toolbar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+        <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:orientation = "vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:padding = "16dp"
+                android:text = "@string/header_category"
+                android:textSize = "16sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                app:cardCornerRadius = "8dp"
+                app:cardElevation = "6dp"
+                app:cardUseCompatPadding = "true">
+
+                <RelativeLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:paddingTop = "16dp"
+                    android:paddingBottom = "16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_title"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:paddingStart = "16dp"
+                        android:paddingEnd = "16dp"
+                        android:paddingBottom = "10dp"
+                        android:text = "Three Days in Paris"
+                        android:textSize = "16sp"
+                        android:textStyle = "bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_destination_count"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/text_title"
+                        android:paddingStart = "16dp"
+                        android:paddingEnd = "16dp"
+                        android:paddingBottom = "16dp"
+                        android:text = "7 sights"
+                        android:textSize = "14sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id = "@+id/list_item"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/text_destination_count"
+                        android:layout_marginBottom = "16dp"
+                        android:orientation = "horizontal"
+                        app:layoutManager = "androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount = "4"
+                        tools:listitem = "@layout/image_destination_item" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_info"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/list_item"
+                        android:layout_marginStart = "16dp"
+                        android:layout_marginLeft = "16dp"
+                        android:layout_toStartOf = "@id/icon_arrow"
+                        android:layout_toLeftOf = "@id/icon_arrow"
+                        android:drawablePadding = "16dp"
+                        android:text = "Some sights may not be open on Mon &amp; Wed. Please check opening hour"
+                        android:textSize = "14sp"
+                        app:drawableStartCompat = "@drawable/ic_info_outline" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id = "@+id/icon_arrow"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/list_item"
+                        android:layout_alignParentEnd = "true"
+                        android:layout_alignParentRight = "true"
+                        android:paddingLeft = "16dp"
+                        android:paddingRight = "16dp"
+                        app:srcCompat = "@drawable/ic_keyboard_arrow_down" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                app:cardCornerRadius = "8dp"
+                app:cardElevation = "6dp"
+                app:cardUseCompatPadding = "true">
+
+                <RelativeLayout
+                    android:id="@+id/parent_item_2"
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:paddingTop = "16dp"
+                    android:paddingBottom = "16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_title_2"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:paddingStart = "16dp"
+                        android:paddingEnd = "16dp"
+                        android:paddingBottom = "10dp"
+                        android:text = "Main Sight"
+                        android:textSize = "16sp"
+                        android:textStyle = "bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_destination_count_2"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/text_title_2"
+                        android:paddingStart = "16dp"
+                        android:paddingEnd = "16dp"
+                        android:paddingBottom = "16dp"
+                        android:text = "3 sights"
+                        android:textSize = "14sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id = "@+id/list_item_2"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/text_destination_count_2"
+                        android:layout_marginBottom = "16dp"
+                        android:orientation = "horizontal"
+                        app:layoutManager = "androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount = "4"
+                        tools:listitem = "@layout/image_destination_item" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id = "@+id/text_info_2"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/list_item_2"
+                        android:layout_marginStart = "16dp"
+                        android:layout_marginLeft = "16dp"
+                        android:layout_toStartOf = "@id/icon_arrow_2"
+                        android:layout_toLeftOf = "@id/icon_arrow_2"
+                        android:drawablePadding = "16dp"
+                        android:text = "Some sights may not be open on Mon &amp; Wed. Please check opening hour"
+                        android:textSize = "14sp"
+                        app:drawableStartCompat = "@drawable/ic_info_outline" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id = "@+id/icon_arrow_2"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/list_item_2"
+                        android:layout_alignParentEnd = "true"
+                        android:layout_alignParentRight = "true"
+                        android:paddingLeft = "16dp"
+                        android:paddingRight = "16dp"
+                        app:srcCompat = "@drawable/ic_keyboard_arrow_up" />
+
+                    <LinearLayout
+                        android:id = "@+id/parent_direction"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_below = "@id/text_info_2"
+                        android:layout_marginTop = "16dp"
+                        android:orientation = "vertical">
+
+                        <include layout = "@layout/direction_item_1" />
+
+                        <include layout = "@layout/direction_item_2" />
+
+                        <include layout = "@layout/direction_item_3" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
