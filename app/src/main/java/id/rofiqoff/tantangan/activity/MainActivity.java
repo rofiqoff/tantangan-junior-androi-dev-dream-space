@@ -1,8 +1,10 @@
-package id.rofiqoff.tantangan;
+package id.rofiqoff.tantangan.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import id.rofiqoff.tantangan.R;
 
 public class MainActivity extends AppCompatActivity {
 
